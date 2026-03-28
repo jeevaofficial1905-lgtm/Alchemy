@@ -12,6 +12,12 @@ export interface ElementData {
   electron_configuration: string;
   electron_shells: number[];
   color: string;
+  electronegativity?: number;
+  melting_point?: number;
+  boiling_point?: number;
+  density?: number;
+  oxidation_states?: number[];
+  common_compounds?: string[];
 }
 
 export const ELEMENTS: ElementData[] = [
@@ -27,7 +33,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Hydrogen is the chemical element with the symbol H and atomic number 1. With a standard atomic weight of 1.008, hydrogen is the lightest element on the periodic table.",
     electron_configuration: "1s1",
     electron_shells: [1],
-    color: "#D1D5DB"
+    color: "#D1D5DB",
+    electronegativity: 2.20,
+    melting_point: 14.01,
+    boiling_point: 20.28,
+    density: 0.00008988,
+    oxidation_states: [1, -1],
+    common_compounds: ["H2O", "HCl", "CH4", "NH3"]
   },
   {
     number: 2,
@@ -41,7 +53,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Helium is a chemical element with symbol He and atomic number 2. It is a colorless, odorless, tasteless, non-toxic, inert, monatomic gas, the first in the noble gas group in the periodic table.",
     electron_configuration: "1s2",
     electron_shells: [2],
-    color: "#FDE68A"
+    color: "#FDE68A",
+    electronegativity: undefined,
+    melting_point: 0.95,
+    boiling_point: 4.22,
+    density: 0.0001785,
+    oxidation_states: [0],
+    common_compounds: ["None (Inert)"]
   },
   {
     number: 3,
@@ -55,7 +73,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Lithium is a chemical element with symbol Li and atomic number 3. It is a soft, silvery-white alkali metal. Under standard conditions, it is the lightest metal and the lightest solid element.",
     electron_configuration: "[He] 2s1",
     electron_shells: [2, 1],
-    color: "#F87171"
+    color: "#F87171",
+    electronegativity: 0.98,
+    melting_point: 453.65,
+    boiling_point: 1603,
+    density: 0.534,
+    oxidation_states: [1],
+    common_compounds: ["Li2O", "LiOH", "LiCl", "Li2CO3"]
   },
   {
     number: 4,
@@ -69,7 +93,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Beryllium is a chemical element with symbol Be and atomic number 4. It is a relatively rare element in the universe, usually occurring as a product of the spallation of larger atomic nuclei that have collided with cosmic rays.",
     electron_configuration: "[He] 2s2",
     electron_shells: [2, 2],
-    color: "#FBBF24"
+    color: "#FBBF24",
+    electronegativity: 1.57,
+    melting_point: 1560,
+    boiling_point: 2742,
+    density: 1.85,
+    oxidation_states: [2],
+    common_compounds: ["BeO", "BeCl2", "Be(OH)2"]
   },
   {
     number: 5,
@@ -83,7 +113,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Boron is a chemical element with symbol B and atomic number 5. Produced entirely by cosmic ray spallation and supernovae and not by stellar nucleosynthesis, it is a low-abundance element in the Solar System and in the Earth's crust.",
     electron_configuration: "[He] 2s2 2p1",
     electron_shells: [2, 3],
-    color: "#34D399"
+    color: "#34D399",
+    electronegativity: 2.04,
+    melting_point: 2349,
+    boiling_point: 4273,
+    density: 2.08,
+    oxidation_states: [3],
+    common_compounds: ["B2O3", "H3BO3", "BF3", "NaBH4"]
   },
   {
     number: 6,
@@ -97,7 +133,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Carbon is a chemical element with symbol C and atomic number 6. It is nonmetallic and tetravalent—making four electrons available to form covalent chemical bonds.",
     electron_configuration: "[He] 2s2 2p2",
     electron_shells: [2, 4],
-    color: "#60A5FA"
+    color: "#60A5FA",
+    electronegativity: 2.55,
+    melting_point: 3823,
+    boiling_point: 4300,
+    density: 2.267,
+    oxidation_states: [4, 2, -4],
+    common_compounds: ["CO2", "CO", "CH4", "C6H12O6"]
   },
   {
     number: 7,
@@ -111,7 +153,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Nitrogen is the chemical element with the symbol N and atomic number 7. It was first discovered and isolated by Scottish physician Daniel Rutherford in 1772.",
     electron_configuration: "[He] 2s2 2p3",
     electron_shells: [2, 5],
-    color: "#818CF8"
+    color: "#818CF8",
+    electronegativity: 3.04,
+    melting_point: 63.15,
+    boiling_point: 77.36,
+    density: 0.0012506,
+    oxidation_states: [5, 4, 3, 2, 1, -1, -2, -3],
+    common_compounds: ["NH3", "HNO3", "N2O", "NO2"]
   },
   {
     number: 8,
@@ -125,7 +173,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Oxygen is the chemical element with the symbol O and atomic number 8. It is a member of the chalcogen group in the periodic table, a highly reactive nonmetal, and an oxidizing agent that readily forms oxides with most elements as well as with other compounds.",
     electron_configuration: "[He] 2s2 2p4",
     electron_shells: [2, 6],
-    color: "#A78BFA"
+    color: "#A78BFA",
+    electronegativity: 3.44,
+    melting_point: 54.36,
+    boiling_point: 90.20,
+    density: 0.001429,
+    oxidation_states: [-2],
+    common_compounds: ["H2O", "CO2", "O3", "SiO2"]
   },
   {
     number: 9,
@@ -139,7 +193,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Fluorine is a chemical element with symbol F and atomic number 9. It is the most electronegative element and is extremely reactive: almost all other elements, including some noble gases, form compounds with fluorine.",
     electron_configuration: "[He] 2s2 2p5",
     electron_shells: [2, 7],
-    color: "#F472B6"
+    color: "#F472B6",
+    electronegativity: 3.98,
+    melting_point: 53.48,
+    boiling_point: 85.03,
+    density: 0.001696,
+    oxidation_states: [-1],
+    common_compounds: ["HF", "NaF", "CaF2", "SF6"]
   },
   {
     number: 10,
@@ -153,7 +213,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Neon is a chemical element with symbol Ne and atomic number 10. It is a noble gas. Neon is a colorless, odorless, inert monatomic gas under standard conditions, with about two-thirds the density of air.",
     electron_configuration: "[He] 2s2 2p6",
     electron_shells: [2, 8],
-    color: "#FDE68A"
+    color: "#FDE68A",
+    electronegativity: undefined,
+    melting_point: 24.56,
+    boiling_point: 27.07,
+    density: 0.0008999,
+    oxidation_states: [0],
+    common_compounds: ["None (Inert)"]
   },
   {
     number: 11,
@@ -167,7 +233,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Sodium is a chemical element with symbol Na and atomic number 11. It is a soft, silvery-white, highly reactive metal. Sodium is an alkali metal, being in group 1 of the periodic table.",
     electron_configuration: "[Ne] 3s1",
     electron_shells: [2, 8, 1],
-    color: "#F87171"
+    color: "#F87171",
+    electronegativity: 0.93,
+    melting_point: 370.944,
+    boiling_point: 1156.09,
+    density: 0.968,
+    oxidation_states: [1]
   },
   {
     number: 12,
@@ -181,7 +252,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Magnesium is a chemical element with symbol Mg and atomic number 12. It is a shiny gray solid which bears a close physical resemblance to the other five elements in the second column of the periodic table.",
     electron_configuration: "[Ne] 3s2",
     electron_shells: [2, 8, 2],
-    color: "#FBBF24"
+    color: "#FBBF24",
+    electronegativity: 1.31,
+    melting_point: 923,
+    boiling_point: 1363,
+    density: 1.738,
+    oxidation_states: [2]
   },
   {
     number: 13,
@@ -195,7 +271,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Aluminium is a chemical element with symbol Al and atomic number 13. It is a silvery-white, soft, nonmagnetic and ductile metal in the boron group.",
     electron_configuration: "[Ne] 3s2 3p1",
     electron_shells: [2, 8, 3],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.61,
+    melting_point: 933.47,
+    boiling_point: 2743,
+    density: 2.70,
+    oxidation_states: [3]
   },
   {
     number: 14,
@@ -209,7 +290,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Silicon is a chemical element with symbol Si and atomic number 14. It is a hard and brittle crystalline solid with a blue-gray metallic luster; and it is a tetravalent metalloid and semiconductor.",
     electron_configuration: "[Ne] 3s2 3p2",
     electron_shells: [2, 8, 4],
-    color: "#34D399"
+    color: "#34D399",
+    electronegativity: 1.90,
+    melting_point: 1687,
+    boiling_point: 3538,
+    density: 2.329,
+    oxidation_states: [4, 2, -4]
   },
   {
     number: 15,
@@ -223,7 +309,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Phosphorus is a chemical element with symbol P and atomic number 15. As an element, phosphorus exists in two major forms, white phosphorus and red phosphorus, but because it is highly reactive, phosphorus is never found as a free element on Earth.",
     electron_configuration: "[Ne] 3s2 3p3",
     electron_shells: [2, 8, 5],
-    color: "#60A5FA"
+    color: "#60A5FA",
+    electronegativity: 2.19,
+    melting_point: 317.3,
+    boiling_point: 553.7,
+    density: 1.823,
+    oxidation_states: [5, 4, 3, 2, 1, -1, -2, -3]
   },
   {
     number: 16,
@@ -237,7 +328,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Sulfur is a chemical element with symbol S and atomic number 16. It is abundant, multivalent, and nonmetallic. Under normal conditions, sulfur atoms form cyclic octatomic molecules with a chemical formula S8.",
     electron_configuration: "[Ne] 3s2 3p4",
     electron_shells: [2, 8, 6],
-    color: "#A78BFA"
+    color: "#A78BFA",
+    electronegativity: 2.58,
+    melting_point: 388.36,
+    boiling_point: 717.8,
+    density: 2.07,
+    oxidation_states: [6, 4, 2, -2]
   },
   {
     number: 17,
@@ -251,7 +347,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Chlorine is a chemical element with symbol Cl and atomic number 17. The second-lightest of the halogens, it appears between fluorine and bromine in the periodic table and its properties are mostly intermediate between them.",
     electron_configuration: "[Ne] 3s2 3p5",
     electron_shells: [2, 8, 7],
-    color: "#F472B6"
+    color: "#F472B6",
+    electronegativity: 3.16,
+    melting_point: 171.6,
+    boiling_point: 239.11,
+    density: 0.0032,
+    oxidation_states: [7, 5, 3, 1, -1]
   },
   {
     number: 18,
@@ -265,7 +366,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Argon is a chemical element with symbol Ar and atomic number 18. It is in group 18 of the periodic table and is a noble gas. Argon is the third-most abundant gas in the Earth's atmosphere, at 0.934%.",
     electron_configuration: "[Ne] 3s2 3p6",
     electron_shells: [2, 8, 8],
-    color: "#FDE68A"
+    color: "#FDE68A",
+    electronegativity: undefined,
+    melting_point: 83.81,
+    boiling_point: 87.30,
+    density: 0.001784,
+    oxidation_states: [0]
   },
   {
     number: 19,
@@ -279,7 +385,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Potassium is a chemical element with symbol K and atomic number 19. It was first isolated from potash, the ashes of plants, from which its name derives. In the periodic table, potassium is one of the alkali metals.",
     electron_configuration: "[Ar] 4s1",
     electron_shells: [2, 8, 8, 1],
-    color: "#F87171"
+    color: "#F87171",
+    electronegativity: 0.82,
+    melting_point: 336.7,
+    boiling_point: 1032,
+    density: 0.862,
+    oxidation_states: [1]
   },
   {
     number: 20,
@@ -293,7 +404,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Calcium is a chemical element with symbol Ca and atomic number 20. As an alkaline earth metal, calcium is a reactive metal that forms a dark oxide-nitride layer when exposed to air.",
     electron_configuration: "[Ar] 4s2",
     electron_shells: [2, 8, 8, 2],
-    color: "#FBBF24"
+    color: "#FBBF24",
+    electronegativity: 1.00,
+    melting_point: 1115,
+    boiling_point: 1757,
+    density: 1.54,
+    oxidation_states: [2]
   },
   {
     number: 21,
@@ -307,7 +423,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Scandium is a chemical element with symbol Sc and atomic number 21. A silvery-white metallic d-block element, it has historically been classified as a rare-earth element, together with yttrium and the lanthanides.",
     electron_configuration: "[Ar] 3d1 4s2",
     electron_shells: [2, 8, 9, 2],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.36,
+    melting_point: 1814,
+    boiling_point: 3109,
+    density: 2.985,
+    oxidation_states: [3]
   },
   {
     number: 22,
@@ -321,7 +442,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Titanium is a chemical element with symbol Ti and atomic number 22. It is a lustrous transition metal with a silver color, low density, and high strength. Titanium is resistant to corrosion in sea water, aqua regia, and chlorine.",
     electron_configuration: "[Ar] 3d2 4s2",
     electron_shells: [2, 8, 10, 2],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.54,
+    melting_point: 1941,
+    boiling_point: 3560,
+    density: 4.506,
+    oxidation_states: [4, 3, 2]
   },
   {
     number: 23,
@@ -335,7 +461,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Vanadium is a chemical element with symbol V and atomic number 23. It is a hard, silvery-grey, malleable transition metal. The elemental metal is rarely found in nature, but once isolated artificially, the formation of an oxide layer somewhat stabilizes the free metal against further oxidation.",
     electron_configuration: "[Ar] 3d3 4s2",
     electron_shells: [2, 8, 11, 2],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.63,
+    melting_point: 2183,
+    boiling_point: 3680,
+    density: 6.11,
+    oxidation_states: [5, 4, 3, 2]
   },
   {
     number: 24,
@@ -349,7 +480,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Chromium is a chemical element with symbol Cr and atomic number 24. It is the first element in group 6. It is a steely-grey, lustrous, hard and brittle transition metal.",
     electron_configuration: "[Ar] 3d5 4s1",
     electron_shells: [2, 8, 13, 1],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.66,
+    melting_point: 2180,
+    boiling_point: 2944,
+    density: 7.15,
+    oxidation_states: [6, 3, 2]
   },
   {
     number: 25,
@@ -363,7 +499,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Manganese is a chemical element with symbol Mn and atomic number 25. It is not found as a free element in nature; it is often found in minerals in combination with iron.",
     electron_configuration: "[Ar] 3d5 4s2",
     electron_shells: [2, 8, 13, 2],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.55,
+    melting_point: 1519,
+    boiling_point: 2334,
+    density: 7.21,
+    oxidation_states: [7, 6, 4, 3, 2]
   },
   {
     number: 26,
@@ -377,7 +518,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Iron is a chemical element with symbol Fe and atomic number 26. It is a metal that belongs to the first transition series and group 8 of the periodic table. It is, by mass, the most common element on Earth, right in front of oxygen, forming much of Earth's outer and inner core.",
     electron_configuration: "[Ar] 3d6 4s2",
     electron_shells: [2, 8, 14, 2],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.83,
+    melting_point: 1811,
+    boiling_point: 3134,
+    density: 7.874,
+    oxidation_states: [3, 2]
   },
   {
     number: 27,
@@ -391,7 +537,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Cobalt is a chemical element with symbol Co and atomic number 27. Like iron, cobalt is found in the Earth's crust only in chemically combined form, save for small deposits found in alloys of natural meteoric iron.",
     electron_configuration: "[Ar] 3d7 4s2",
     electron_shells: [2, 8, 15, 2],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.88,
+    melting_point: 1768,
+    boiling_point: 3200,
+    density: 8.90,
+    oxidation_states: [3, 2]
   },
   {
     number: 28,
@@ -405,7 +556,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Nickel is a chemical element with symbol Ni and atomic number 28. It is a silvery-white lustrous metal with a slight golden tinge. Nickel belongs to the transition metals and is hard and ductile.",
     electron_configuration: "[Ar] 3d8 4s2",
     electron_shells: [2, 8, 16, 2],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.91,
+    melting_point: 1728,
+    boiling_point: 3186,
+    density: 8.908,
+    oxidation_states: [3, 2]
   },
   {
     number: 29,
@@ -419,7 +575,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Copper is a chemical element with symbol Cu and atomic number 29. It is a soft, malleable, and ductile metal with very high thermal and electrical conductivity. A freshly exposed surface of pure copper has a pinkish-orange color.",
     electron_configuration: "[Ar] 3d10 4s1",
     electron_shells: [2, 8, 18, 1],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.90,
+    melting_point: 1357.77,
+    boiling_point: 2835,
+    density: 8.96,
+    oxidation_states: [2, 1]
   },
   {
     number: 30,
@@ -433,7 +594,12 @@ export const ELEMENTS: ElementData[] = [
     summary: "Zinc is a chemical element with symbol Zn and atomic number 30. Zinc is a slightly brittle metal at room temperature and has a blue-silvery appearance when oxidation is removed. It is the first element in group 12 of the periodic table.",
     electron_configuration: "[Ar] 3d10 4s2",
     electron_shells: [2, 8, 18, 2],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.65,
+    melting_point: 692.68,
+    boiling_point: 1180,
+    density: 7.14,
+    oxidation_states: [2]
   },
   {
     number: 31,

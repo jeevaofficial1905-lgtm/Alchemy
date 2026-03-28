@@ -118,6 +118,16 @@ export default function App() {
     });
   }, [searchQuery, filterCategory]);
 
+  const getReactivity = (element: ElementData) => {
+    if (element.group === 18) return "Inert (Noble Gas)";
+    if (element.group === 1) return "Highly Reactive (Alkali Metal)";
+    if (element.group === 17) return "Highly Reactive (Halogen)";
+    if (element.group === 2) return "Reactive (Alkaline Earth Metal)";
+    if (element.category.includes("nonmetal")) return "Reactive Nonmetal";
+    if (element.category.includes("transition metal")) return "Variable Reactivity";
+    return "Stable";
+  };
+
   return (
     <div className="min-h-screen bg-white text-black font-sans selection:bg-black/5 overflow-x-hidden">
       {/* Subtle Background Grid */}
@@ -410,6 +420,73 @@ export default function App() {
                       <div className="text-sm font-mono font-bold text-black">G{selectedElement.group} P{selectedElement.period}</div>
                     </div>
                   </div>
+
+                  {/* Chemical Properties Section */}
+                  {(selectedElement.electronegativity || selectedElement.melting_point || selectedElement.boiling_point || selectedElement.density || selectedElement.oxidation_states) && (
+                    <div className="mb-10">
+                      <div className="text-[10px] font-bold text-black/20 uppercase tracking-[0.3em] mb-6">Chemical Properties</div>
+                      <div className="grid grid-cols-2 gap-x-6 gap-y-8">
+                        {selectedElement.electronegativity && (
+                          <div className="space-y-1.5">
+                            <div className="text-[10px] text-black/20 font-bold uppercase tracking-widest">Electronegativity</div>
+                            <div className="text-sm font-mono font-bold text-black">{selectedElement.electronegativity} <span className="text-black/30 font-normal">χ</span></div>
+                          </div>
+                        )}
+                        {selectedElement.density && (
+                          <div className="space-y-1.5">
+                            <div className="text-[10px] text-black/20 font-bold uppercase tracking-widest">Density</div>
+                            <div className="text-sm font-mono font-bold text-black">{selectedElement.density} <span className="text-black/30 font-normal">g/cm³</span></div>
+                          </div>
+                        )}
+                        {selectedElement.melting_point && (
+                          <div className="space-y-1.5">
+                            <div className="text-[10px] text-black/20 font-bold uppercase tracking-widest">Melting Point</div>
+                            <div className="text-sm font-mono font-bold text-black">{selectedElement.melting_point} <span className="text-black/30 font-normal">K</span></div>
+                          </div>
+                        )}
+                        {selectedElement.boiling_point && (
+                          <div className="space-y-1.5">
+                            <div className="text-[10px] text-black/20 font-bold uppercase tracking-widest">Boiling Point</div>
+                            <div className="text-sm font-mono font-bold text-black">{selectedElement.boiling_point} <span className="text-black/30 font-normal">K</span></div>
+                          </div>
+                        )}
+                        {selectedElement.oxidation_states && (
+                          <div className="space-y-1.5">
+                            <div className="text-[10px] text-black/20 font-bold uppercase tracking-widest">Oxidation States</div>
+                            <div className="flex flex-wrap gap-2 mt-1">
+                              {selectedElement.oxidation_states.map(state => (
+                                <span key={state} className="px-2 py-0.5 bg-black/[0.03] border border-black/[0.05] rounded text-[10px] font-mono font-bold text-black">
+                                  {state > 0 ? `+${state}` : state}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        <div className="space-y-1.5">
+                          <div className="text-[10px] text-black/20 font-bold uppercase tracking-widest">Valence Electrons</div>
+                          <div className="text-sm font-mono font-bold text-black">
+                            {selectedElement.electron_shells[selectedElement.electron_shells.length - 1]}
+                          </div>
+                        </div>
+                        <div className="space-y-1.5 col-span-2">
+                          <div className="text-[10px] text-black/20 font-bold uppercase tracking-widest">Reactivity Profile</div>
+                          <div className="text-xs font-bold text-black">{getReactivity(selectedElement)}</div>
+                        </div>
+                        {selectedElement.common_compounds && (
+                          <div className="space-y-1.5 col-span-2">
+                            <div className="text-[10px] text-black/20 font-bold uppercase tracking-widest">Common Compounds</div>
+                            <div className="flex flex-wrap gap-2 mt-1">
+                              {selectedElement.common_compounds.map(compound => (
+                                <span key={compound} className="px-2 py-0.5 bg-black/[0.03] border border-black/[0.05] rounded text-[10px] font-mono font-bold text-black">
+                                  {compound}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
 
                   <div className="space-y-8">
                     {/* AI Insight Section */}
