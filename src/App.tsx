@@ -1,11 +1,13 @@
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Environment, ContactShadows } from '@react-three/drei';
 import { motion, AnimatePresence } from 'motion/react';
-import { Search, Info, Atom, Thermometer, Weight, Layers, ChevronRight, X, ExternalLink } from 'lucide-react';
+import { Search, Info, Atom, Thermometer, Weight, Layers, ChevronRight, X, ExternalLink, Sparkles, Loader2, Eye, EyeOff, RotateCcw, Pause, Play } from 'lucide-react';
 import { ELEMENTS, ElementData } from './constants';
 import { BohrModel } from './components/BohrModel';
+import { getElementInsight } from './services/gemini';
+import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 
 export default function App() {
   const [selectedElement, setSelectedElement] = useState<ElementData | null>(null);
@@ -13,6 +15,35 @@ export default function App() {
   const [filterCategory, setFilterCategory] = useState<string | null>(null);
   const [activeShell, setActiveShell] = useState<number | null>(null);
   const [selectedElectron, setSelectedElectron] = useState<{ shell: number, index: number } | null>(null);
+  const [aiInsight, setAiInsight] = useState<string | null>(null);
+  const [isAiLoading, setIsAiLoading] = useState(false);
+  const [showShells, setShowShells] = useState(true);
+  const [showElectrons, setShowElectrons] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
+  const controlsRef = useRef<OrbitControlsImpl>(null);
+
+  useEffect(() => {
+    setAiInsight(null);
+  }, [selectedElement]);
+
+  const resetCamera = () => {
+    if (controlsRef.current) {
+      controlsRef.current.reset();
+    }
+  };
+
+  const handleGetAiInsight = async () => {
+    if (!selectedElement) return;
+    setIsAiLoading(true);
+    try {
+      const insight = await getElementInsight(selectedElement.name);
+      setAiInsight(insight);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsAiLoading(false);
+    }
+  };
 
   const quantumNumbers = useMemo(() => {
     if (selectedElectron === null) return null;
@@ -170,7 +201,14 @@ export default function App() {
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = `https://picsum.photos/seed/${element.name.toLowerCase()}/400/400?grayscale`;
+                      (e.target as HTMLImageElement).style.display = 'none';
+                      const parent = (e.target as HTMLImageElement).parentElement;
+                      if (parent && !parent.querySelector('.element-placeholder')) {
+                        const placeholder = document.createElement('div');
+                        placeholder.className = 'element-placeholder absolute inset-0 flex items-center justify-center bg-black/[0.02]';
+                        placeholder.innerHTML = `<span class="text-4xl font-black text-black/[0.05] font-mono">${element.symbol}</span>`;
+                        parent.appendChild(placeholder);
+                      }
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-40" />
@@ -203,11 +241,47 @@ export default function App() {
                 className="bg-white border border-black/[0.05] rounded-2xl overflow-hidden flex flex-col h-[800px] shadow-2xl relative"
               >
                 {/* 3D Canvas */}
-                <div className="relative h-[420px] bg-gray-50/50 border-b border-black/[0.03]">
-                  <div className="absolute top-8 left-8 z-10">
+                <div 
+                  className="relative h-[420px] bg-gray-50/50 border-b border-black/[0.03] cursor-pointer select-none"
+                  onDoubleClick={() => setIsPaused(!isPaused)}
+                >
+                  <div className="absolute top-8 left-8 z-10 flex flex-col gap-4">
                     <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-black/30">
                       <div className="w-1.5 h-1.5 rounded-full bg-black/10 animate-pulse" />
                       Atomic Visualization
+                      <span className="ml-2 lowercase font-normal opacity-50 tracking-normal">(Double-click to {isPaused ? 'resume' : 'pause'})</span>
+                    </div>
+
+                    {/* View Controls */}
+                    <div className="flex gap-2">
+                      <button 
+                        onClick={() => setIsPaused(!isPaused)}
+                        className={`p-2 rounded-full border transition-all ${isPaused ? 'bg-black text-white border-black' : 'bg-white text-black/30 border-black/[0.05] hover:border-black/20'}`}
+                        title={isPaused ? "Resume Animation" : "Pause Animation"}
+                      >
+                        {isPaused ? <Play size={14} /> : <Pause size={14} />}
+                      </button>
+                      <button 
+                        onClick={() => setShowShells(!showShells)}
+                        className={`p-2 rounded-full border transition-all ${showShells ? 'bg-black text-white border-black' : 'bg-white text-black/30 border-black/[0.05] hover:border-black/20'}`}
+                        title={showShells ? "Hide Shells" : "Show Shells"}
+                      >
+                        {showShells ? <Layers size={14} /> : <EyeOff size={14} />}
+                      </button>
+                      <button 
+                        onClick={() => setShowElectrons(!showElectrons)}
+                        className={`p-2 rounded-full border transition-all ${showElectrons ? 'bg-black text-white border-black' : 'bg-white text-black/30 border-black/[0.05] hover:border-black/20'}`}
+                        title={showElectrons ? "Hide Electrons" : "Show Electrons"}
+                      >
+                        {showElectrons ? <Atom size={14} /> : <EyeOff size={14} />}
+                      </button>
+                      <button 
+                        onClick={resetCamera}
+                        className="p-2 rounded-full border bg-white text-black/30 border-black/[0.05] hover:border-black/20 hover:text-black transition-all"
+                        title="Reset Camera"
+                      >
+                        <RotateCcw size={14} />
+                      </button>
                     </div>
                   </div>
 
@@ -223,7 +297,7 @@ export default function App() {
                   
                   <Canvas dpr={[1, 2]}>
                     <PerspectiveCamera makeDefault position={[0, 0, 10]} />
-                    <OrbitControls enableZoom={true} autoRotate={!activeShell && !selectedElectron} autoRotateSpeed={0.5} />
+                    <OrbitControls ref={controlsRef} enableZoom={true} autoRotate={!activeShell && !selectedElectron && !isPaused} autoRotateSpeed={0.5} />
                     <ambientLight intensity={1} />
                     <pointLight position={[10, 10, 10]} intensity={2} />
                     <BohrModel 
@@ -232,6 +306,10 @@ export default function App() {
                       activeShellIndex={activeShell}
                       selectedElectron={selectedElectron}
                       subshellIndices={subshellIndices}
+                      showShells={showShells}
+                      showElectrons={showElectrons}
+                      isPaused={isPaused}
+                      onTogglePause={() => setIsPaused(!isPaused)}
                       onShellSelect={(idx) => {
                         setActiveShell(idx);
                         setSelectedElectron(null);
@@ -334,6 +412,39 @@ export default function App() {
                   </div>
 
                   <div className="space-y-8">
+                    {/* AI Insight Section */}
+                    <div className="p-6 bg-black/[0.01] border border-black/[0.03] rounded-xl relative overflow-hidden group/ai">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-2">
+                          <Sparkles size={14} className="text-black/30 group-hover/ai:text-black transition-colors" />
+                          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/30">AI Insight Engine</span>
+                        </div>
+                        {!aiInsight && !isAiLoading && (
+                          <button 
+                            onClick={handleGetAiInsight}
+                            className="text-[9px] font-bold uppercase tracking-widest text-black/40 hover:text-black transition-colors"
+                          >
+                            Generate
+                          </button>
+                        )}
+                      </div>
+                      
+                      {isAiLoading ? (
+                        <div className="flex items-center gap-3 py-2">
+                          <Loader2 size={14} className="animate-spin text-black/20" />
+                          <span className="text-[10px] font-medium text-black/20 uppercase tracking-widest">Synthesizing atomic data...</span>
+                        </div>
+                      ) : aiInsight ? (
+                        <p className="text-xs text-black/60 leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-2 duration-500">
+                          {aiInsight}
+                        </p>
+                      ) : (
+                        <p className="text-xs text-black/30 leading-relaxed font-medium italic">
+                          Click generate to receive an advanced AI-powered scientific insight about this element.
+                        </p>
+                      )}
+                    </div>
+
                     <div className="p-6 bg-black/[0.01] border border-black/[0.03] rounded-xl">
                       <p className="text-xs text-black/50 leading-relaxed font-medium">
                         {selectedElement.summary}
