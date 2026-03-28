@@ -1,5 +1,5 @@
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Sphere, Trail, Float } from '@react-three/drei';
 import * as THREE from 'three';
@@ -54,7 +54,7 @@ const Electron = ({ radius, speed, offset, color, isHighlighted, isSubshellHighl
         color={new THREE.Color(displayColor)}
         attenuation={(t) => t * t}
       >
-        <Sphere args={[(isHighlighted || hovered) ? 0.18 : isSubshellHighlighted ? 0.14 : 0.08, 16, 16]}>
+        <Sphere args={[(isHighlighted || hovered) ? 0.2 : isSubshellHighlighted ? 0.16 : 0.12, 16, 16]}>
           <meshBasicMaterial 
             color={displayColor} 
             toneMapped={false} 
@@ -120,7 +120,7 @@ const Shell = ({ radius, electronCount, color, isHighlighted, selectedElectronIn
           <meshBasicMaterial 
             color={isHighlighted ? '#ffffff' : color} 
             transparent 
-            opacity={isHighlighted ? 0.8 : hovered ? 0.4 : 0.15} 
+            opacity={isHighlighted ? 0.8 : hovered ? 0.4 : 0.25} 
             side={THREE.DoubleSide} 
           />
         </mesh>
@@ -151,7 +151,73 @@ const Shell = ({ radius, electronCount, color, isHighlighted, selectedElectronIn
   );
 };
 
+interface NucleusProps {
+  protons: number;
+  neutrons: number;
+  elementColor: string;
+}
+
+const Nucleus = ({ protons, neutrons, elementColor }: NucleusProps) => {
+  const totalParticles = protons + neutrons;
+  // Limit the number of visible particles for performance, but show enough to feel "structured"
+  const maxVisible = Math.min(totalParticles, 50); 
+  const scale = 0.4;
+  
+  const particles = useMemo(() => {
+    const result = [];
+    const goldenRatio = (1 + Math.sqrt(5)) / 2;
+    
+    for (let i = 0; i < maxVisible; i++) {
+      // Fibonacci sphere distribution
+      const y = maxVisible > 1 ? 1 - (i / (maxVisible - 1)) * 2 : 0;
+      const radius = Math.sqrt(1 - y * y);
+      const theta = (2 * Math.PI * i) / goldenRatio;
+      
+      const x = Math.cos(theta) * radius;
+      const z = Math.sin(theta) * radius;
+      
+      // Randomly assign as proton or neutron based on ratio
+      const isProton = Math.random() < (protons / totalParticles);
+      
+      result.push({
+        position: [x * scale, y * scale, z * scale] as [number, number, number],
+        isProton,
+        id: i
+      });
+    }
+    return result;
+  }, [maxVisible, protons, totalParticles]);
+
+  return (
+    <group>
+      {particles.map((p) => (
+        <Sphere key={p.id} position={p.position} args={[0.18, 16, 16]}>
+          <meshStandardMaterial 
+            color={p.isProton ? "#ff3333" : "#3333ff"} 
+            emissive={p.isProton ? "#ff0000" : "#0000ff"}
+            emissiveIntensity={0.5}
+            roughness={0.3}
+            metalness={0.8}
+          />
+        </Sphere>
+      ))}
+      {/* Core glow */}
+      <Sphere args={[scale * 1.2, 32, 32]}>
+        <meshStandardMaterial 
+          color={elementColor} 
+          transparent 
+          opacity={0.2} 
+          emissive={elementColor}
+          emissiveIntensity={0.3}
+        />
+      </Sphere>
+    </group>
+  );
+};
+
 interface BohrModelProps {
+  protons: number;
+  neutrons: number;
   shells: number[];
   elementColor: string;
   activeShellIndex: number | null;
@@ -165,7 +231,7 @@ interface BohrModelProps {
   onElectronSelect: (shellIndex: number, electronIndex: number) => void;
 }
 
-export const BohrModel = ({ shells, elementColor, activeShellIndex, selectedElectron, subshellIndices, showShells, showElectrons, isPaused, onTogglePause, onShellSelect, onElectronSelect }: BohrModelProps) => {
+export const BohrModel = ({ protons, neutrons, shells, elementColor, activeShellIndex, selectedElectron, subshellIndices, showShells, showElectrons, isPaused, onTogglePause, onShellSelect, onElectronSelect }: BohrModelProps) => {
   return (
     <Float speed={isPaused ? 0 : 2} rotationIntensity={isPaused ? 0 : 0.5} floatIntensity={isPaused ? 0 : 0.5}>
       <group 
@@ -178,15 +244,7 @@ export const BohrModel = ({ shells, elementColor, activeShellIndex, selectedElec
         }}
       >
         {/* Nucleus */}
-        <Sphere args={[0.4, 32, 32]}>
-          <meshStandardMaterial 
-            color={elementColor} 
-            emissive={elementColor} 
-            emissiveIntensity={1} 
-            roughness={0.1}
-            metalness={0.8}
-          />
-        </Sphere>
+        <Nucleus protons={protons} neutrons={neutrons} elementColor={elementColor} />
         
         {/* Electron Shells */}
         {shells.map((count, i) => (

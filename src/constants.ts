@@ -238,7 +238,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 370.944,
     boiling_point: 1156.09,
     density: 0.968,
-    oxidation_states: [1]
+    oxidation_states: [1],
+    common_compounds: ["NaCl", "NaOH", "Na2CO3", "NaHCO3"]
   },
   {
     number: 12,
@@ -257,7 +258,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 923,
     boiling_point: 1363,
     density: 1.738,
-    oxidation_states: [2]
+    oxidation_states: [2],
+    common_compounds: ["MgO", "MgCl2", "Mg(OH)2", "MgSO4"]
   },
   {
     number: 13,
@@ -276,7 +278,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 933.47,
     boiling_point: 2743,
     density: 2.70,
-    oxidation_states: [3]
+    oxidation_states: [3],
+    common_compounds: ["Al2O3", "AlCl3", "Al(OH)3", "KAl(SO4)2"]
   },
   {
     number: 14,
@@ -295,7 +298,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 1687,
     boiling_point: 3538,
     density: 2.329,
-    oxidation_states: [4, 2, -4]
+    oxidation_states: [4, 2, -4],
+    common_compounds: ["SiO2", "SiC", "SiH4", "Na2SiO3"]
   },
   {
     number: 15,
@@ -314,7 +318,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 317.3,
     boiling_point: 553.7,
     density: 1.823,
-    oxidation_states: [5, 4, 3, 2, 1, -1, -2, -3]
+    oxidation_states: [5, 4, 3, 2, 1, -1, -2, -3],
+    common_compounds: ["P4O10", "H3PO4", "PH3", "Ca3(PO4)2"]
   },
   {
     number: 16,
@@ -333,7 +338,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 388.36,
     boiling_point: 717.8,
     density: 2.07,
-    oxidation_states: [6, 4, 2, -2]
+    oxidation_states: [6, 4, 2, -2],
+    common_compounds: ["H2SO4", "SO2", "H2S", "FeS2"]
   },
   {
     number: 17,
@@ -352,7 +358,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 171.6,
     boiling_point: 239.11,
     density: 0.0032,
-    oxidation_states: [7, 5, 3, 1, -1]
+    oxidation_states: [7, 5, 3, 1, -1],
+    common_compounds: ["NaCl", "HCl", "ClO2", "CaCl2"]
   },
   {
     number: 18,
@@ -371,7 +378,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 83.81,
     boiling_point: 87.30,
     density: 0.001784,
-    oxidation_states: [0]
+    oxidation_states: [0],
+    common_compounds: ["None (Inert)"]
   },
   {
     number: 19,
@@ -390,7 +398,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 336.7,
     boiling_point: 1032,
     density: 0.862,
-    oxidation_states: [1]
+    oxidation_states: [1],
+    common_compounds: ["KCl", "KOH", "KNO3", "K2CO3"]
   },
   {
     number: 20,
@@ -409,7 +418,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 1115,
     boiling_point: 1757,
     density: 1.54,
-    oxidation_states: [2]
+    oxidation_states: [2],
+    common_compounds: ["CaCO3", "CaO", "Ca(OH)2", "CaCl2"]
   },
   {
     number: 21,
@@ -428,7 +438,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 1814,
     boiling_point: 3109,
     density: 2.985,
-    oxidation_states: [3]
+    oxidation_states: [3],
+    common_compounds: ["Sc2O3", "ScCl3", "ScF3"]
   },
   {
     number: 22,
@@ -447,7 +458,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 1941,
     boiling_point: 3560,
     density: 4.506,
-    oxidation_states: [4, 3, 2]
+    oxidation_states: [4, 3, 2],
+    common_compounds: ["TiO2", "TiCl4", "TiN"]
   },
   {
     number: 23,
@@ -466,7 +478,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 2183,
     boiling_point: 3680,
     density: 6.11,
-    oxidation_states: [5, 4, 3, 2]
+    oxidation_states: [5, 4, 3, 2],
+    common_compounds: ["V2O5", "VOCl3", "VCl3"]
   },
   {
     number: 24,
@@ -485,7 +498,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 2180,
     boiling_point: 2944,
     density: 7.15,
-    oxidation_states: [6, 3, 2]
+    oxidation_states: [6, 3, 2],
+    common_compounds: ["Cr2O3", "CrO3", "K2Cr2O7"]
   },
   {
     number: 25,
@@ -504,7 +518,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 1519,
     boiling_point: 2334,
     density: 7.21,
-    oxidation_states: [7, 6, 4, 3, 2]
+    oxidation_states: [7, 6, 4, 3, 2],
+    common_compounds: ["MnO2", "KMnO4", "MnSO4"]
   },
   {
     number: 26,
@@ -523,7 +538,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 1811,
     boiling_point: 3134,
     density: 7.874,
-    oxidation_states: [3, 2]
+    oxidation_states: [3, 2],
+    common_compounds: ["Fe2O3", "Fe3O4", "FeSO4", "FeCl3"]
   },
   {
     number: 27,
@@ -542,7 +558,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 1768,
     boiling_point: 3200,
     density: 8.90,
-    oxidation_states: [3, 2]
+    oxidation_states: [3, 2],
+    common_compounds: ["CoO", "Co3O4", "CoCl2"]
   },
   {
     number: 28,
@@ -561,7 +578,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 1728,
     boiling_point: 3186,
     density: 8.908,
-    oxidation_states: [3, 2]
+    oxidation_states: [3, 2],
+    common_compounds: ["NiO", "NiSO4", "NiCl2"]
   },
   {
     number: 29,
@@ -580,7 +598,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 1357.77,
     boiling_point: 2835,
     density: 8.96,
-    oxidation_states: [2, 1]
+    oxidation_states: [2, 1],
+    common_compounds: ["CuO", "Cu2O", "CuSO4", "CuCl2"]
   },
   {
     number: 30,
@@ -599,7 +618,8 @@ export const ELEMENTS: ElementData[] = [
     melting_point: 692.68,
     boiling_point: 1180,
     density: 7.14,
-    oxidation_states: [2]
+    oxidation_states: [2],
+    common_compounds: ["ZnO", "ZnS", "ZnCl2", "ZnSO4"]
   },
   {
     number: 31,
@@ -613,7 +633,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Gallium is a chemical element with symbol Ga and atomic number 31. Elemental gallium is a soft, silvery blue metal at standard temperature and pressure, a brittle solid at low temperatures, and a liquid at temperatures greater than 29.76 °C.",
     electron_configuration: "[Ar] 3d10 4s2 4p1",
     electron_shells: [2, 8, 18, 3],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.81,
+    melting_point: 302.91,
+    boiling_point: 2673,
+    density: 5.91,
+    oxidation_states: [3],
+    common_compounds: ["Ga2O3", "GaCl3", "GaAs"]
   },
   {
     number: 32,
@@ -627,7 +653,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Germanium is a chemical element with symbol Ge and atomic number 32. It is a lustrous, hard-brittle, grayish-white metalloid in the carbon group, chemically similar to its group neighbors silicon and tin.",
     electron_configuration: "[Ar] 3d10 4s2 4p2",
     electron_shells: [2, 8, 18, 4],
-    color: "#34D399"
+    color: "#34D399",
+    electronegativity: 2.01,
+    melting_point: 1211.4,
+    boiling_point: 3106,
+    density: 5.323,
+    oxidation_states: [4, 2],
+    common_compounds: ["GeO2", "GeCl4", "GeH4"]
   },
   {
     number: 33,
@@ -641,7 +673,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Arsenic is a chemical element with symbol As and atomic number 33. Arsenic occurs in many minerals, usually in combination with sulfur and metals, but also as a pure elemental crystal.",
     electron_configuration: "[Ar] 3d10 4s2 4p3",
     electron_shells: [2, 8, 18, 5],
-    color: "#34D399"
+    color: "#34D399",
+    electronegativity: 2.18,
+    melting_point: 1090,
+    boiling_point: 887,
+    density: 5.727,
+    oxidation_states: [5, 3, -3],
+    common_compounds: ["As2O3", "As2O5", "AsH3"]
   },
   {
     number: 34,
@@ -655,7 +693,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Selenium is a chemical element with symbol Se and atomic number 34. It is a nonmetal (more rarely considered a metalloid) with properties that are intermediate between the elements above and below in the periodic table, sulfur and tellurium.",
     electron_configuration: "[Ar] 3d10 4s2 4p4",
     electron_shells: [2, 8, 18, 6],
-    color: "#60A5FA"
+    color: "#60A5FA",
+    electronegativity: 2.55,
+    melting_point: 494,
+    boiling_point: 958,
+    density: 4.81,
+    oxidation_states: [6, 4, -2],
+    common_compounds: ["SeO2", "H2Se", "Na2SeO3"]
   },
   {
     number: 35,
@@ -669,7 +713,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Bromine is a chemical element with symbol Br and atomic number 35. It is the third-lightest halogen, and is a fuming red-brown liquid at room temperature that evaporates readily to form a similarly coloured gas.",
     electron_configuration: "[Ar] 3d10 4s2 4p5",
     electron_shells: [2, 8, 18, 7],
-    color: "#F472B6"
+    color: "#F472B6",
+    electronegativity: 2.96,
+    melting_point: 265.8,
+    boiling_point: 332,
+    density: 3.1028,
+    oxidation_states: [7, 5, 3, 1, -1],
+    common_compounds: ["HBr", "NaBr", "AgBr", "BrF3"]
   },
   {
     number: 36,
@@ -683,7 +733,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Krypton is a chemical element with symbol Kr and atomic number 36. It is a member of group 18 (noble gases) elements. A colorless, odorless, tasteless noble gas, krypton occurs in trace amounts in the atmosphere.",
     electron_configuration: "[Ar] 3d10 4s2 4p6",
     electron_shells: [2, 8, 18, 8],
-    color: "#FDE68A"
+    color: "#FDE68A",
+    electronegativity: 3.00,
+    melting_point: 115.79,
+    boiling_point: 119.93,
+    density: 0.003733,
+    oxidation_states: [2, 0],
+    common_compounds: ["KrF2"]
   },
   {
     number: 37,
@@ -697,7 +753,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Rubidium is a chemical element with symbol Rb and atomic number 37. Rubidium is a soft, silvery-white metallic element of the alkali metal group, with an atomic mass of 85.4678.",
     electron_configuration: "[Kr] 5s1",
     electron_shells: [2, 8, 18, 8, 1],
-    color: "#F87171"
+    color: "#F87171",
+    electronegativity: 0.82,
+    melting_point: 312.46,
+    boiling_point: 961,
+    density: 1.532,
+    oxidation_states: [1],
+    common_compounds: ["Rb2O", "RbOH", "RbCl"]
   },
   {
     number: 38,
@@ -711,7 +773,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Strontium is a chemical element with symbol Sr and atomic number 38. An alkaline earth metal, strontium is a soft silver-white yellowish metallic element that is highly reactive chemically.",
     electron_configuration: "[Kr] 5s2",
     electron_shells: [2, 8, 18, 8, 2],
-    color: "#FBBF24"
+    color: "#FBBF24",
+    electronegativity: 0.95,
+    melting_point: 1050,
+    boiling_point: 1655,
+    density: 2.64,
+    oxidation_states: [2],
+    common_compounds: ["SrO", "SrCO3", "Sr(NO3)2", "SrCl2"]
   },
   {
     number: 39,
@@ -725,7 +793,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Yttrium is a chemical element with symbol Y and atomic number 39. It is a silvery-metallic transition metal chemically similar to the lanthanides and has often been classified as a \"rare-earth element\".",
     electron_configuration: "[Kr] 4d1 5s2",
     electron_shells: [2, 8, 18, 9, 2],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.22,
+    melting_point: 1799,
+    boiling_point: 3609,
+    density: 4.472,
+    oxidation_states: [3],
+    common_compounds: ["Y2O3", "YCl3", "YF3"]
   },
   {
     number: 40,
@@ -739,7 +813,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Zirconium is a chemical element with symbol Zr and atomic number 40. The name zirconium is taken from the name of the mineral zircon, the most important source of zirconium.",
     electron_configuration: "[Kr] 4d2 5s2",
     electron_shells: [2, 8, 18, 10, 2],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.33,
+    melting_point: 2128,
+    boiling_point: 4682,
+    density: 6.52,
+    oxidation_states: [4],
+    common_compounds: ["ZrO2", "ZrCl4", "ZrSiO4"]
   },
   {
     number: 41,
@@ -753,7 +833,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Niobium, formerly known as columbium, is a chemical element with symbol Nb and atomic number 41. It is a soft, grey, crystalline, ductile transition metal, often found in the minerals pyrochlore and columbite.",
     electron_configuration: "[Kr] 4d4 5s1",
     electron_shells: [2, 8, 18, 12, 1],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.6,
+    melting_point: 2750,
+    boiling_point: 5017,
+    density: 8.57,
+    oxidation_states: [5, 3],
+    common_compounds: ["Nb2O5", "NbCl5"]
   },
   {
     number: 42,
@@ -767,7 +853,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Molybdenum is a chemical element with symbol Mo and atomic number 42. The name is from Neo-Latin molybdaenum, from Ancient Greek molybdos, meaning lead, since its ores were confused with lead ores.",
     electron_configuration: "[Kr] 4d5 5s1",
     electron_shells: [2, 8, 18, 13, 1],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 2.16,
+    melting_point: 2896,
+    boiling_point: 4912,
+    density: 10.28,
+    oxidation_states: [6, 4],
+    common_compounds: ["MoO3", "MoS2", "Na2MoO4"]
   },
   {
     number: 43,
@@ -781,7 +873,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Technetium is a chemical element with symbol Tc and atomic number 43. It is the lightest element whose isotopes are all radioactive; none are stable, excluding the fully ionized state of 97Tc.",
     electron_configuration: "[Kr] 4d5 5s2",
     electron_shells: [2, 8, 18, 13, 2],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.9,
+    melting_point: 2430,
+    boiling_point: 4538,
+    density: 11,
+    oxidation_states: [7, 4],
+    common_compounds: ["Tc2O7", "NH4TcO4"]
   },
   {
     number: 44,
@@ -795,7 +893,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Ruthenium is a chemical element with symbol Ru and atomic number 44. It is a rare transition metal belonging to the platinum group of the periodic table.",
     electron_configuration: "[Kr] 4d7 5s1",
     electron_shells: [2, 8, 18, 15, 1],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 2.2,
+    melting_point: 2607,
+    boiling_point: 4423,
+    density: 12.45,
+    oxidation_states: [8, 4, 3],
+    common_compounds: ["RuO2", "RuO4", "RuCl3"]
   },
   {
     number: 45,
@@ -809,7 +913,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Rhodium is a chemical element with symbol Rh and atomic number 45. It is a rare, silvery-white, hard, corrosion-resistant, and chemically inert transition metal. It is a noble metal and a member of the platinum group.",
     electron_configuration: "[Kr] 4d8 5s1",
     electron_shells: [2, 8, 18, 16, 1],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 2.28,
+    melting_point: 2237,
+    boiling_point: 3968,
+    density: 12.41,
+    oxidation_states: [3],
+    common_compounds: ["Rh2O3", "RhCl3"]
   },
   {
     number: 46,
@@ -823,7 +933,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Palladium is a chemical element with symbol Pd and atomic number 46. It is a rare and lustrous silvery-white metal discovered in 1803 by William Hyde Wollaston.",
     electron_configuration: "[Kr] 4d10",
     electron_shells: [2, 8, 18, 18],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 2.20,
+    melting_point: 1828.05,
+    boiling_point: 3236,
+    density: 12.023,
+    oxidation_states: [4, 2],
+    common_compounds: ["PdO", "PdCl2", "Pd(OAc)2"]
   },
   {
     number: 47,
@@ -837,7 +953,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Silver is a chemical element with symbol Ag and atomic number 47. A soft, white, lustrous transition metal, it exhibits the highest electrical conductivity, thermal conductivity, and reflectivity of any metal.",
     electron_configuration: "[Kr] 4d10 5s1",
     electron_shells: [2, 8, 18, 18, 1],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.93,
+    melting_point: 1234.93,
+    boiling_point: 2435,
+    density: 10.49,
+    oxidation_states: [1],
+    common_compounds: ["AgNO3", "AgCl", "Ag2O", "AgBr"]
   },
   {
     number: 48,
@@ -851,7 +973,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Cadmium is a chemical element with symbol Cd and atomic number 48. This soft, silvery-white metal is chemically similar to the two other stable metals in group 12, zinc and mercury.",
     electron_configuration: "[Kr] 4d10 5s2",
     electron_shells: [2, 8, 18, 18, 2],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.69,
+    melting_point: 594.22,
+    boiling_point: 1040,
+    density: 8.65,
+    oxidation_states: [2],
+    common_compounds: ["CdO", "CdS", "CdCl2"]
   },
   {
     number: 49,
@@ -865,7 +993,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Indium is a chemical element with symbol In and atomic number 49. Indium is a post-transition metal that makes up 0.21 parts per million of the Earth's crust. Indium is a very soft, malleable and easily fusible metal.",
     electron_configuration: "[Kr] 4d10 5s2 5p1",
     electron_shells: [2, 8, 18, 18, 3],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.78,
+    melting_point: 429.75,
+    boiling_point: 2345,
+    density: 7.31,
+    oxidation_states: [3],
+    common_compounds: ["In2O3", "InCl3", "InAs"]
   },
   {
     number: 50,
@@ -879,7 +1013,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Tin is a chemical element with symbol Sn and atomic number 50. Tin is a silvery-white metal with a faint yellow hue. Tin, like indium, is soft enough to be cut without much force.",
     electron_configuration: "[Kr] 4d10 5s2 5p2",
     electron_shells: [2, 8, 18, 18, 4],
-    color: "#94A3B8"
+    color: "#94A3B8",
+    electronegativity: 1.96,
+    melting_point: 505.08,
+    boiling_point: 2875,
+    density: 7.287,
+    oxidation_states: [4, 2],
+    common_compounds: ["SnO2", "SnO", "SnCl2", "SnCl4"]
   },
   {
     number: 51,
@@ -893,7 +1033,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Antimony is a chemical element with symbol Sb and atomic number 51. A lustrous gray metalloid, it is found in nature mainly as the sulfide mineral stibnite.",
     electron_configuration: "[Kr] 4d10 5s2 5p3",
     electron_shells: [2, 8, 18, 18, 5],
-    color: "#34D399"
+    color: "#34D399",
+    electronegativity: 2.05,
+    melting_point: 903.78,
+    boiling_point: 1860,
+    density: 6.697,
+    oxidation_states: [5, 3, -3],
+    common_compounds: ["Sb2O3", "Sb2S3", "SbCl3"]
   },
   {
     number: 52,
@@ -907,7 +1053,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Tellurium is a chemical element with symbol Te and atomic number 52. It is a brittle, mildly toxic, rare, silver-white metalloid. Tellurium is chemically related to selenium and sulfur, all three of which are chalcogens.",
     electron_configuration: "[Kr] 4d10 5s2 5p4",
     electron_shells: [2, 8, 18, 18, 6],
-    color: "#34D399"
+    color: "#34D399",
+    electronegativity: 2.1,
+    melting_point: 722.66,
+    boiling_point: 1261,
+    density: 6.24,
+    oxidation_states: [6, 4, -2],
+    common_compounds: ["TeO2", "H2Te", "Na2TeO3"]
   },
   {
     number: 53,
@@ -921,7 +1073,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Iodine is a chemical element with symbol I and atomic number 53. The heaviest of the stable halogens, it exists as a semi-lustrous, non-metallic solid at standard conditions that melts to form a deep violet liquid at 114 degrees Celsius.",
     electron_configuration: "[Kr] 4d10 5s2 5p5",
     electron_shells: [2, 8, 18, 18, 7],
-    color: "#F472B6"
+    color: "#F472B6",
+    electronegativity: 2.66,
+    melting_point: 386.85,
+    boiling_point: 457.4,
+    density: 4.933,
+    oxidation_states: [7, 5, 1, -1],
+    common_compounds: ["KI", "NaI", "I2O5", "AgI"]
   },
   {
     number: 54,
@@ -935,7 +1093,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Xenon is a chemical element with symbol Xe and atomic number 54. It is a colorless, dense, odorless noble gas found in the Earth's atmosphere in trace amounts.",
     electron_configuration: "[Kr] 4d10 5s2 5p6",
     electron_shells: [2, 8, 18, 18, 8],
-    color: "#FDE68A"
+    color: "#FDE68A",
+    electronegativity: 2.6,
+    melting_point: 161.4,
+    boiling_point: 165.03,
+    density: 0.005894,
+    oxidation_states: [8, 6, 4, 2, 0],
+    common_compounds: ["XeF2", "XeF4", "XeF6", "XeO3"]
   },
   {
     number: 55,
@@ -949,7 +1113,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Caesium is a chemical element with symbol Cs and atomic number 55. It is a soft, silvery-gold alkali metal with a melting point of 28.5 °C, which makes it one of only five elemental metals that are liquid at or near room temperature.",
     electron_configuration: "[Xe] 6s1",
     electron_shells: [2, 8, 18, 18, 8, 1],
-    color: "#F87171"
+    color: "#F87171",
+    electronegativity: 0.79,
+    melting_point: 301.59,
+    boiling_point: 944,
+    density: 1.93,
+    oxidation_states: [1],
+    common_compounds: ["CsCl", "CsOH", "Cs2O"]
   },
   {
     number: 56,
@@ -963,7 +1133,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Barium is a chemical element with symbol Ba and atomic number 56. It is the fifth element in group 2 and is a soft, silvery alkaline earth metal. Because of its high chemical reactivity, barium is never found in nature as a free element.",
     electron_configuration: "[Xe] 6s2",
     electron_shells: [2, 8, 18, 18, 8, 2],
-    color: "#FBBF24"
+    color: "#FBBF24",
+    electronegativity: 0.89,
+    melting_point: 1000,
+    boiling_point: 2170,
+    density: 3.51,
+    oxidation_states: [2],
+    common_compounds: ["BaSO4", "BaCl2", "BaO", "BaCO3"]
   },
   {
     number: 57,
@@ -977,7 +1153,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Lanthanum is a chemical element with symbol La and atomic number 57. It is a soft, ductile, silvery-white metal that tarnishes slowly when exposed to air and is soft enough to be cut with a knife.",
     electron_configuration: "[Xe] 5d1 6s2",
     electron_shells: [2, 8, 18, 18, 9, 2],
-    color: "#A78BFA"
+    color: "#A78BFA",
+    electronegativity: 1.1,
+    melting_point: 1193,
+    boiling_point: 3737,
+    density: 6.162,
+    oxidation_states: [3],
+    common_compounds: ["La2O3", "LaCl3", "LaF3"]
   },
   {
     number: 58,
@@ -991,7 +1173,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Cerium is a chemical element with symbol Ce and atomic number 58. Cerium is a soft, ductile, and silvery-white metal that tarnishes when exposed to air, and it is soft enough to be cut with a knife.",
     electron_configuration: "[Xe] 4f1 5d1 6s2",
     electron_shells: [2, 8, 18, 19, 9, 2],
-    color: "#A78BFA"
+    color: "#A78BFA",
+    electronegativity: 1.12,
+    melting_point: 1068,
+    boiling_point: 3716,
+    density: 6.77,
+    oxidation_states: [4, 3],
+    common_compounds: ["CeO2", "Ce2O3", "CeCl3"]
   },
   {
     number: 59,
@@ -1005,7 +1193,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Praseodymium is a chemical element with symbol Pr and atomic number 59. Praseodymium is a soft, silvery, malleable and ductile metal, valued for its magnetic, electrical, chemical, and optical properties.",
     electron_configuration: "[Xe] 4f3 6s2",
     electron_shells: [2, 8, 18, 21, 8, 2],
-    color: "#A78BFA"
+    color: "#A78BFA",
+    electronegativity: 1.13,
+    melting_point: 1208,
+    boiling_point: 3793,
+    density: 6.77,
+    oxidation_states: [4, 3],
+    common_compounds: ["Pr2O3", "Pr6O11", "PrCl3"]
   },
   {
     number: 60,
@@ -1019,7 +1213,13 @@ export const ELEMENTS: ElementData[] = [
     summary: "Neodymium is a chemical element with symbol Nd and atomic number 60. It is a soft silvery metal that tarnishes in air. Neodymium was discovered in 1885 by the Austrian chemist Carl Auer von Welsbach.",
     electron_configuration: "[Xe] 4f4 6s2",
     electron_shells: [2, 8, 18, 22, 8, 2],
-    color: "#A78BFA"
+    color: "#A78BFA",
+    electronegativity: 1.14,
+    melting_point: 1297,
+    boiling_point: 3347,
+    density: 7.01,
+    oxidation_states: [3],
+    common_compounds: ["Nd2O3", "NdCl3", "NdF3"]
   },
   {
     number: 61,
