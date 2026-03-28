@@ -1,0 +1,5 @@
+{
+  "name": "Element Explorer",
+  "description": "A 3D interactive periodic table and element viewer for science students.",
+  "requestFramePermissions": []
+}
